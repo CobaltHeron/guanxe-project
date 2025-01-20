@@ -2,6 +2,12 @@
  * Custom code goes here.
  * A template should always ship with an empty custom.css
  */
+
+#content-wrapper {
+ background-color: #ffffff !important;
+
+}
+
  #header{ background: #0076A7 !important;
  width: 100%;
 
@@ -14,7 +20,38 @@
 
 }
 
-#carousel > ul > li > a > figure > img {
- width:1400px !important;
- object-fit: cover !important;
+.banner {
+ width: 100%;
+}
+
+#content > a > img {
+ width: 100%;
+}
+
+#header > nav{
+ width: 100%;
+ text-align:  center;
+ max-height: 30px !important;
+}
+
+
+#_desktop_logo > h1 > a > img {
+ max-width: 170px !important;
+ width: 100%;
+ height: auto;
+}
+
+#header > nav > div > div > div.hidden-sm-down > p {
+ color:white;
+ font-size: 12px;
+ padding-top:5px;
+ font-weight: bold;
+}
+
+#custom-text > h1 {
+ font-size: 40px;
+}
+
+#custom-text > p {
+ font-size: 18px;
 }
