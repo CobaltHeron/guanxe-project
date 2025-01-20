@@ -4,6 +4,7 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+
 class CrossSell extends Module
 {
     public function __construct()
@@ -38,11 +39,35 @@ class CrossSell extends Module
         return true;
     }
 
+    // LLAMADA A LA API AQUÍ ABAJO. DESCOMENTAR CUANDO LA TENGAMOS  (LINEA 45):
+
+    /* private function getRecommendedProducts() {
+        $url = Aquí va la URL de la api de guanxe
+        $product_id = $this->context->controller->getProduct()->id;
+        $data = [
+            'product_id' => $this->context->controller->getproduct()->id,
+        ];
+        $response = Tools::file_get_contents($url, null, json_encode($data));
+
+        if ($response === false) {
+        return [];
+    }
+
+    &products = json_decode($response, true);
+
     public function hookDisplayHome($params)
     {
-        $this->context->smarty->assign('example_var', 'THIS IS THE "DisplayHome" HOOK!');
+        $recommended_products = $this->getRecommendedProducts();
+        $this->context->smarty->assign('recommended_products', 'Recommended products');
         return $this->display(__FILE__, 'views/templates/front/home.tpl');
+
+    if (isset($products['recommended']) && count ($products ['recommended']) > 0) {
+        return array_slice($products['recommended'], 0, 5);
     }
+
+    return [];
+
+    }*/
 
 
 }
