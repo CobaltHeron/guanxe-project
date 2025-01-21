@@ -1,0 +1,20 @@
+/*
+ * Custom code goes here.
+ * A template should always ship with an empty custom.css
+ */
+ #header{ background: #0076A7 !important;
+ width: 100%;
+
+ }
+#header a {
+ color: white;
+}
+.container{
+ width: 100% !important;
+
+}
+
+#carousel > ul > li > a > figure > img {
+ width:1400px !important;
+ object-fit: cover !important;
+}
