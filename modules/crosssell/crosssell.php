@@ -40,6 +40,10 @@ class CrossSell extends Module
     }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/alberto
     public function hookDisplayFooterProduct($params)
     {
         $products = Product::getProducts($this->context->language->id, 0, 10,
