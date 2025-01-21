@@ -4,7 +4,6 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-
 class CrossSell extends Module
 {
     public function __construct()
@@ -25,7 +24,8 @@ class CrossSell extends Module
             return false;
         }
 
-        $this->registerHook('displayHome');
+        // $this->registerHook('displayHome');
+        $this->registerHook('displayFooterProduct');
 
         return true;
     }
@@ -38,6 +38,20 @@ class CrossSell extends Module
 
         return true;
     }
+
+
+    public function hookDisplayFooterProduct($params)
+    {
+        $products = Product::getProducts($this->context->language->id, 0, 10,
+            'id_product', 'DESC');
+        $this->context->smarty->assign('products', $products);
+        return $this->display(__FILE__, 'views/templates/front/myproduct.tpl');
+
+    }
+
+
+
+
 
     // LLAMADA A LA API AQUÍ ABAJO. DESCOMENTAR CUANDO LA TENGAMOS  (LINEA 45):
 
