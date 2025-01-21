@@ -5,6 +5,7 @@
             <a href="{$product.link}">
                 <img src="{$product.cover.bySize.home_default.url}" alt="
 {$product.name}">
+                <h3>{$product.rate}</h3>
                 <h3>{$product.name}</h3>
                 <h3>{$product.price}</h3>
             </a>
