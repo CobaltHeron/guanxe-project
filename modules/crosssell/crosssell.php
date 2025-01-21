@@ -42,7 +42,9 @@ class CrossSell extends Module
 
     public function hookDisplayFooterProduct($params)
     {
-        $this->context->smarty->assign('product_example', 'AQUI ES DONDE EL HOOK displayFooterProduct SE MUESTRA');
+        $products = Product::getProducts($this->context->language->id, 0, 10,
+            'id_product', 'DESC');
+        $this->context->smarty->assign('products', $products);
         return $this->display(__FILE__, 'views/templates/front/myproduct.tpl');
 
     }
