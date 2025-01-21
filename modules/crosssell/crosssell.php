@@ -39,8 +39,6 @@ class CrossSell extends Module
         return true;
     }
 
-
-
     public function hookDisplayFooterProduct($params)
     {
         $products = Product::getProducts($this->context->language->id, 0, 10,
@@ -50,9 +48,7 @@ class CrossSell extends Module
 
     }
 
-
-
-
+}
 
     // LLAMADA A LA API AQUÍ ABAJO. DESCOMENTAR CUANDO LA TENGAMOS  (LINEA 45):
 
@@ -85,4 +81,63 @@ class CrossSell extends Module
     }*/
 
 
-}
+
+
+
+
+// ------------------------------ FUNCIONES ANTERIORES, daban error ----------------------------------------------
+
+//  public function getCrossSellProducts($id_product)
+//    {
+//        $sql = 'SELECT p.id_product, p.name, p.price, pl.link_rewrite, i.id_image
+//            FROM ' . _DB_PREFIX_ . 'product p
+//            INNER JOIN ' . _DB_PREFIX_ . 'product_lang pl ON p.id_product = pl.id_product
+//            LEFT JOIN ' . _DB_PREFIX_ . 'image i ON p.id_product = i.id_product AND i.cover = 1
+//            WHERE p.active = 1
+//            LIMIT 10';
+//
+//        $products = Db::getInstance()->executeS($sql);
+//
+//        foreach ($products as &$product) {
+//            $product['link'] = $this->context->link->getProductLink(
+//                $product['id_product'],
+//                $product['link_rewrite']
+//            );
+//
+//            $product['cover'] = $this->context->link->getImageLink(
+//                $product['link_rewrite'],
+//                $product['id_image'],
+//                'home_default'
+//            );
+//        }
+//
+//        return $products;
+//    }
+//
+//
+//    public function hookDisplayFooterProduct($params)
+//    {
+//        $this->context->controller->addCSS($this->_path . 'views/css/crosssell.css', 'all');
+//
+//        $id_product = (int)Tools::getValue('id_product');
+//
+//        $products = $this->getCrossSellProducts($id_product);
+//
+//        foreach ($products as &$product) {
+//            $product['rating'] = $this->getProductRating($product['id_product']);
+//        }
+//
+//        $this->context->smarty->assign('products', $products);
+//
+//        return $this->display(__FILE__, 'views/templates/front/myproduct.tpl');
+//    }
+//
+//
+//    public function getProductRating($id_product)
+//    {
+//        $sql = 'SELECT AVG(pc.grade) as rating
+//            FROM ' . _DB_PREFIX_ . 'product_comment pc
+//            WHERE pc.id_product = ' . (int)$id_product . ' AND pc.validate = 1';
+//
+//        return Db::getInstance()->getValue($sql) ?: 0;
+//    }

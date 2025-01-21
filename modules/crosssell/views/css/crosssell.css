@@ -1,0 +1,23 @@
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 200px;
+}
+
+.product-rating {
+    color: #FFD700;
+    font-size: 18px;
+}
+
+.product-rating .fa-star,
+.product-rating .fa-star-o {
+    margin-right: 2px;
+}
